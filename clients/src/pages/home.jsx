@@ -6,7 +6,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const response = await fetch("http://localhost:3000/api/users");
+      const response = await fetch("https://basic-full-stack-project-backend.onrender.com/api/users");
       const data = await response.json();
       setUsers(data);
     };
@@ -18,11 +18,11 @@ const Home = () => {
     const confirmDelete = window.confirm("Are you sure you want to delete this user?");
     if (confirmDelete) {
       try {
-        const response = await fetch(`http://localhost:3000/api/users/${id}`, {
+        const response = await fetch(`https://basic-full-stack-project-backend.onrender.com/api/users/${id}`, {
           method: "DELETE",
         });
         if (response.ok) {
-          const updatedUsers = await (await fetch("http://localhost:3000/api/users")).json();
+          const updatedUsers = await (await fetch("https://basic-full-stack-project-backend.onrender.com/api/users")).json();
           setUsers(updatedUsers);
         } else {
           const errorData = await response.json();

@@ -16,7 +16,7 @@ const EditUser = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/users/${id}`);
+        const response = await fetch(`https://basic-full-stack-project-backend.onrender.com/api/users/${id}`);
         if (response.ok) {
           const data = await response.json();
           setFormData(data);
@@ -51,7 +51,7 @@ const EditUser = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/api/users/${id}`, {
+      const response = await fetch(`https://basic-full-stack-project-backend.onrender.com/api/users/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
